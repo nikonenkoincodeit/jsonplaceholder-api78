@@ -48,8 +48,9 @@ export function createAlbumList(album = []) {
 }
 
 export function createAlbumCard(items = []) {
-  return items.map(({id, thumbnailUrl, title}) => {
-    return `<div class="card" data-set="${id}">
+  return items
+    .map(({ id, thumbnailUrl, title }) => {
+      return `<div class="card" data-set="${id}">
     <img class="bd-placeholder-img card-img-top" width="200" height="200"
       src="${thumbnailUrl}" alt="${title}" />
     <div class="card-body">
@@ -57,7 +58,7 @@ export function createAlbumCard(items = []) {
       ${title}
       </p>
     </div>
-  </div>`
-  }).join("")
+  </div>`;
+    })
+    .join("");
 }
-
